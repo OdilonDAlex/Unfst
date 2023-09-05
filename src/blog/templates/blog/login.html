@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Login {% endblock %}
+{% block styleSheet %}<link rel="stylesheet" href="{% static 'blog/login.css' %}">{% endblock %}
+
+{% block content %}
+    <section style="height: 100vh; position: relative; width: 100%;" class="row">
+        <div class="container-login row p-0">
+        <div class="login-illustration d-none d-md-flex flex-column justify-content-center col-md-6">
+            <h3 class="display-4 text-center fw-bold">Bienvenue!</h3>
+        </div>
+        <div class="login col-12 col-md-6 mx-0 d-flex flex-column justify-content-center">
+            <h1 class="header-text text-center display-5 mb-5">#Connexion</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {% if login_error %}
+                <ul>
+                    <li style="color: rgb(224, 122, 95); list-style-type: none;" class=" text-center errorlist">Mot de passe ou Nom d'utilisateur erronée!</li>
+                </ul>
+                {% endif %}
+                <p class="form-floating mb-4">
+                    <input class="form-control form-control-sm" type="text" id="username" name="username" maxlength="150"  placeholder="Nom d'utilisateur" required>
+                    <label for="username">Nom d'utilisateur</label>
+                </p>
+
+                <p class="form-floating mb-4">
+                    <input class="form-control form-control-sm" type="password" id="password" name="password" maxlength="128" placeholder="Mot de passe" required>
+                    <label for="password">Mot de passe</label>
+                </p>
+
+                <input class="btn" type="submit" value="Se connecter">
+
+                <div>
+                    <hr>
+                    <p class="text-center"><span class="small">Vous n'avez pas encore de compte ?</span></p>
+                </div>
+
+                <p class="btn btn-block border p-0" ><a style="color: var(--secondary-btn); padding: 4px;" class="small d-inline-block w-100 h-100 text-decoration-none" href="{% url 'register' %}">S'inscrire</a></p>
+            </form>
+        </div>
+    </div>
+    </section>
+{% endblock %}

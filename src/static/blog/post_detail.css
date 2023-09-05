@@ -1,0 +1,23 @@
+button.love_post {
+    width: 30px ;
+    height: 30px ;
+    border: none ;
+    outline : none;
+    background-color: transparent ;
+    width: 100px ;
+}
+
+svg {
+    width: 25px ;
+    height: 25px ;
+}
+
+.post_comments {
+    background-color: var(--secondary-btn);
+    color:var(--primary-bg);
+}
+
+.post_comments .comment-author{
+    color: var(--primary-btn);
+    font-weight: bold;
+}

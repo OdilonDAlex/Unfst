@@ -1,0 +1,42 @@
+#body .container-register {
+    position: absolute;
+    top: 50% ;
+    left: 50% ;
+    transform: translate(-50%, -50%) ;
+    width: 65% ;
+    height: 80%  ;
+    border-radius: 0.5rem ;
+    box-shadow: 0px 0px 4px var(--primary-btn);
+}
+
+#body .register {
+    background-color: var(--secondary-bg) ;
+    border-radius: 0 0.5rem 0.5rem 0 ;
+}
+
+#body .register-illustration {
+    border-right: 0.6px solid grey ;
+    background-color: var(--primary-btn) ;
+    color: var(--primary-bg)!important ;
+    border-radius: 0.5rem 0 0 0.5rem ;
+}
+
+#body .container-register input[type="submit"] {
+    display: block;
+    background-color: var(--primary-btn);
+    color: var(--secondary-bg);
+    width: 100% ;
+}
+
+#body div div form div p {
+     position: relative;
+     margin-top: -25px ;
+     margin-bottom: 5px ;
+     background-color: transparent ;
+}
+
+#body div div form div p span{
+    background-color: var(--secondary-bg) ;
+    color: var(--secondary-btn);
+    padding:  0px 4px ;
+}

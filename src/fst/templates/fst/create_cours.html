@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}Ajout d'un fichier de cours{% endblock %}
+
+{% block styleSheet %}
+<style>
+    .container{
+        align-items: center;
+    }
+
+    .container form{
+        background-color: var(--secondary-bg);
+        border-radius: 0.5rem ;
+        border: none;
+        box-shadow: 0px 0px 4px var(--primary-btn);
+    }
+
+    .create-cours-container div form input[type="submit"]{
+        display: block;
+        width: 100% ;
+        margin-bottom: 0px ;
+        background-color: var(--primary-btn) ;
+        color: var(--secondary-bg) ;
+    }
+
+    .create-cours-container form p label.id_title_label{
+    position: relative ;
+    color: grey ;
+    float: left ;
+    border: 0.3px solid var(--primary-btn) ;
+    border-top-left-radius: 0.3rem ;
+    border-bottom-left-radius: 0.3rem ;
+    height: 30px ;
+    width: 50px ;
+    background-color: var(--primary-btn) ;
+    color: var(--secondary-bg);
+    display: flex ;
+    flex-direction: column ;
+    justify-content: center ;
+    align-items: center ;
+}
+
+.create-cours-container form #id_title{
+    display: block;
+    width: calc(100% - 50px) ;
+    border: 0.3px solid var(--primary-btn);
+    height: 30px ;
+    border-left: 0px ;
+    border-top-right-radius: 0.3rem ;
+    border-bottom-right-radius: 0.3rem ;
+    background-color: var(--primary-bg) ;
+    color: var(--secondary-btn) ;
+    padding-left: 10px ;
+    outline: none ;
+}
+
+.create-cours-container form .id_description_label {
+    display: flex;
+    position: relative;
+    top: 100% ;
+}
+
+.create-cours-container form #id_description {
+    width: 100% ;
+    border: 0.3px solid var(--primary-btn) ;
+    border-radius: 0.3rem;
+    outline: none;
+    background-color: var(--primary-bg) ;
+    color: var(--secondary-btn) ;
+    padding: 10px ;
+    height: 80px ;
+}
+
+</style>
+{% endblock %}
+
+{% block content %}
+    <section style="height: 100vh; position: relative; width: 100%;" class="row create-cours-container">
+
+        <div class="container d-flex flex-column justify-content-center">
+            <form style="width: max-content; height: max-content;" class="p-3" method="POST" enctype="multipart/form-data">
+                <h2 class="display-5 text-center header-text mb-4">#Uploader un fichier</h2>
+                {% csrf_token %}
+                <input type="hidden" name="author" value="{{ user }}">
+                {{ form.as_p }}
+
+                <input class="btn btn-sm btn-primary" type="submit" value="Ajouter">
+                <p class="d-inline-block w-100 cancel-btn mt-2 btn btn-block border p-0" ><a style="color: var(--secondary-btn); padding: 4px;" class="small d-inline-block w-100 h-100 text-decoration-none" href="{% url 'fst_homepage' %}#programmes-et-fichiers">Annuler</a></p>
+        </form>
+        </div>
+    </section>
+{% endblock %}
+{% block script_file %}
+<script>$(document).ready(function(){
+        let all_p_in_form = document.querySelectorAll(".create-cours-container form p") ;
+
+        for(let para of all_p_in_form) {
+            if( para.querySelector("input") ) {
+                if (para.querySelector("label")) {
+                    para.querySelector("label").className = para.querySelector("input").id + "_label" ;
+                }
+            }
+            else  {
+                if (para.querySelector("label")){
+                    if (para.querySelector("textarea")){
+                        para.querySelector("label").className = para.querySelector("textarea").id + "_label" ;
+                    }
+                    else{
+                        para.querySelector("label").className = para.querySelector("select").id + "_label" ;
+                        para.querySelector("select").className += "form-control form-control-sm" ;
+                        }
+                    }
+                }
+            }
+
+
+
+    }) ;</script>
+
+{% endblock %}

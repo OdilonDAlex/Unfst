@@ -1,0 +1,115 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% block styleSheet %}{% endblock %}
+    <style>
+
+        :root{
+            --primary-bg: rgb(0, 173, 181) ;
+            --secondary-bg: rgb(238, 238, 238) ;
+            --primary-btn: rgb(57, 62, 70) ;
+            --secondary-btn: rgb(34, 40, 49) ;
+        }
+
+
+        :root{
+            --primary-bg: rgb(219, 226, 239) ;
+            --secondary-bg: rgb(249, 247, 247) ;
+            --primary-btn: rgb(63, 114, 175) ;
+            --secondary-btn: rgb(17, 45, 78) ;
+        }
+
+    </style>
+    <script src="{% static 'bootstrap.bundle.min.js' %}" defer></script>
+    <script src="{% static 'jquery-3.7.0.min.js'%}"></script>
+    <title>!FST - {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="header-container">
+    <header style="border: 0.5px solid var(--primary-btn);" id="navbar" class="navbar navbar-expand-md px-2 small navbar-light bg-light ">
+        <div>
+            <a class="navbar-brand ms-2" href="#">
+            <img src="{% static 'logo.png' %}" width="30" height="30" class="img-fluid" alt="Logo UnFST">
+        </a>
+        <span style="color: var(--primary-btn);" class="small navbar-text">!Official FST WebSite</span>
+
+        </div>
+        <div>
+            <nav class="collapse navbar-collapse" id="content">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link {% block active_homepage %}{% endblock %}" href="{% url 'homepage' %}">Accueil</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle mx-5 {% block active_fst %}{% endblock %}" data-bs-toggle="dropdown" href="{% url 'fst_homepage' %}">FST</a>
+                    <div class="dropdown-menu">
+                        <a style="color: rgb(61, 64, 91);" href="{% url 'fst_homepage' %}#presentation" class="dropdown-item">Présentation</a>
+                        <a style="color: rgb(61, 64, 91);" href="{% url 'fst_homepage' %}#mentions" class="dropdown-item">Mentions</a>
+                        <a style="color: rgb(61, 64, 91);" href="{% url 'fst_homepage' %}#programmes-et-fichiers" class="dropdown-item">Programmes et fichiers</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link {% block active_blog %}{% endblock %}" href="{% url 'blog_homepage' %}">Forums</a></li>
+            </ul>
+        </nav>
+        </div>
+
+        {% block logged_user %}
+                <nav class="navbar-nav">
+            {% if not user.is_authenticated %}
+                <a style="background-color: var(--secondary-bg); color: var(--primary-btn); border: 1px solid var(--primary-btn); width: 100px;" class="btn btn-sm nav-item nav-link py-1" href="{% url 'register' %}">S'inscrire</a>
+                <a style="color: var(--secondary-bg); background-color: var(--primary-btn); width: 100px;" class="btn btn-sm ms-3 nav-item nav-link py-1" href="{% url 'login' %}">Se connecter</a>
+            {% else %}
+                <!--<span class="navbar-text text-capitalize text-info">{{ user.get_full_name }}</span>-->
+                <a style="background-color: var(--secondary-bg); color: var(--primary-btn); border: 1px solid var(--primary-btn); width: 125px;" class="btn btn-sm small nav-item nav-link py-1" href="{% url 'logout' %}">Se deconnecter</a>
+                <a style="color: var(--secondary-bg); background-color: var(--primary-btn); width: 125px;" class="btn btn-sm ms-3 text-decoration-none" href="{% block actionLink %}{% url 'createPost' %}{% endblock %}">{% block userAction %}Publier un article{% endblock %}</a>
+            {% endif %}
+                </nav>
+            {% endblock %}
+    </header>
+    </div>
+    {% block breadcrumb %}{% endblock %}
+    <span class="top d-none" id="top"></span>
+    <section style="margin-top: 40px; margin-bottom: 3px ;" class="container-fluid d-flex flex-nowrap p-0" id="body">
+        {% block content %}{% endblock %}
+    </section>
+    <footer  style="background-color: var(--secondary-btn); color: var(--primary-bg); border: 1px solid var(--primary-btn) ;" class="container-fluid position-sticky top-100">
+        <section class="row p-3">
+            <div class="footer-element col-4">
+                <h4 class="text-start fw-bold">Pour en savoir plus sur FST</h4>
+                <ul>
+                    <li class="text-start"><a href="" class=small">Page Facebook</a></li>
+                    <li class="text-start"><a href="" class="small ">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-element col-4">
+                <h4 class="text-center  fw-bold">Université de Toamasina</h4>
+                <ul>
+                    <li class="text-center"><a href="" class="small ">Site officiel</a></li>
+                    <li class="text-center"><a href="" class="small ">Page facebook</a></li>
+                    <li class="text-center"><a href="" class="small ">+261***********</a></li>
+                </ul>
+            </div>
+            <div class="footer-element col-4">
+                <h4 class="text-end  fw-bold">Contact</h4>
+                <ul>
+                    <li class="text-end"><a href="mailto:odilondalex2600@gmail.com" class="small ">gmail</a></li>
+                    <li class="text-end"><a target="_blank" href="https://m.facebook.com/odilondalex2600" class="small ">Facebook</a></li>
+                    <li class="text-end"><a href="" class="small">Github</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="row small">
+            <div class="col-12 d-flex justify-content-center">
+                <p class="small text-center ">&copy Copyright 2023</p>
+            </div>
+        </section>
+    </footer>
+    {% block script_file %}
+    {% endblock %}
+</body>
+</html>

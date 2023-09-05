@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styleSheet %}
+    <link rel="stylesheet" href="{% static 'blog/create_post.css' %}">
+{% endblock %}
+
+{% block title %}Article{% endblock %}
+
+{% block content %}
+<section class="mt-2 create-post d-flex justify-content-center flex-nowrap row gx-4">
+    <div class="d-none d-md-block col-md-3 d-flex flex-wrap emoji-left emoji-container">
+        {% for emoji in emoji_left_list %}
+            <button>&#{{ emoji }};</button>
+        {% endfor %}
+    </div>
+  <div class="col-12 col-md-6 mx-md-5 create-post-container">
+      {% if buttonName == "Modifier" %}
+      <h2 class="display-5 text-center mb-4 header-text">#Modification d'article</h2>
+      {% else %}
+          <h2 class="display-5 text-center header-text mb-4">#Publication d'article</h2>
+      {% endif %}
+      <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+          {% if buttonName == "Modifier" %}
+              <input type="hidden" name="post_id" value="{{ post_id }}">
+          {% endif %}
+        <p>
+          <input class="btn" type="submit" value="{{ buttonName }}">
+          <p class="cancel-btn btn btn-sm"><a href="{% url 'blog_homepage' %}" class="text-decoration-none">Annuler</a></p>
+        </p>
+      </form>
+  </div>
+    <div class="d-none d-md-block col-md-3 d-flex flex-wrap emoji-right emoji-container">
+        {% for emoji in emoji_right_list %}
+            <button>&#{{ emoji }};</button>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+{% block script_file %}
+<script>$(document).ready(function(){
+        let all_p_in_form = document.querySelectorAll(".create-post-container form p") ;
+
+        for(let para of all_p_in_form) {
+            if( para.querySelector("input") ) {
+                if (para.querySelector("label")) {
+                    para.querySelector("label").className = para.querySelector("input").id + "_label" ;
+                }
+            }
+            else {
+                if (para.querySelector("label")){
+                    para.querySelector("label").className = para.querySelector("textarea").id + "_label" ;
+                }
+            }
+        }
+
+        let para_form_switch = document.querySelector(".create-post-container form p #id_with_html").parentElement ;
+        para_form_switch.className = "form-check form-switch mb-2" ;
+        let label_ = para_form_switch.querySelector("label") ;
+        label_.innerHTML = label_.innerHTML.slice(0, label_.innerHTML.length - 2) ;
+        para_form_switch.querySelector("input").className = "form-check-input" ;
+        para_form_switch.querySelector("label").className = "form-check-label" ;
+        para_form_switch.querySelector("input").style.color = "red";
+
+        if (document.querySelector(".create-post-container .header-text").innerHTML == "#Modification d'article"){
+            const para_image = document.querySelector(".create-post-container form p #id_image").parentElement;
+            let all_para_image_child = para_image.querySelectorAll(" * ") ;
+            for(let element of all_para_image_child){
+
+                if(element.id  != "id_image") {
+                    element.style.display = "none" ;
+                }
+            }
+
+        }
+
+        let all_emoji_btns = document.querySelectorAll(".create-post div.emoji-container button") ;
+        let title_ =  document.querySelector(".create-post-container form #id_title") ;
+        let textarea_ = document.querySelector(".create-post-container form #id_content") ;
+        let active_element = title_  ;
+
+        input_elements = [title_, textarea_] ;
+
+        for(let element of input_elements){
+            element.addEventListener("click", (ev) => {
+                active_element = element ;
+            }) ;
+        }
+
+        for(let btn of all_emoji_btns){
+            btn.addEventListener("click", (ev) => {
+                ev.preventDefault() ;
+
+                active_element.value += btn.textContent;
+            }) ;
+        }
+
+    }) ;</script>
+
+{% endblock %}

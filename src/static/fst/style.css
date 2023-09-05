@@ -1,0 +1,50 @@
+.fst-info {
+    max-width: 40em ;
+    max-width: 65ch ;
+    text-align: justify ;
+}
+
+li {
+    list-style-type: none ;
+}
+
+body {
+    height: 100%;
+    position: relative ;
+}
+
+li a {
+    text-decoration: none;
+    color: var(--primary-btn);
+}
+
+#navigation li:hover,#navigation li a:hover {
+    color: var(--secondary-btn);
+}
+
+section {
+    position: relative ;
+}
+
+#navigation {
+    position: sticky ;
+    top: 40px;
+    height: calc(100vh - 40px);
+    overflow-y: scroll ;
+    background-color: var(--secondary-bg);
+    color: var(--primary-btn);
+}
+
+table thead {
+    font-weight: 600;
+    color: var(--secondary-bg);
+    background-color: var(--primary-btn);
+}
+
+.cards{
+    background-color: var(--secondary-bg) ;
+}
+
+.cards .card-title{
+    color: var(--primary-btn);
+}

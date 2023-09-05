@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block breadcrumb %}
+<!--
+
+    <nav>
+        <ol class="breadcrumb small">
+            <li class="breadcrumb-item active">Accueil</li>
+            <li class="breadcrumb-item"><a class="text-decoration-none" href="{% url 'fst_homepage' %}">FST</a></li>
+            <li class="breadcrumb-item"><a class="text-decoration-none" href="{% url 'blog_homepage' %}">Forum&Actualité</a></li>
+            <li class="breadcrumb-item"><a class="text-decoration-none" href="#">Contact</a></li>
+        </ol>
+    </nav>
+-->
+{% endblock %}
+
+{% block active_homepage %} active active-link {% endblock %}
+
+{% block content %}
+    <section  style="width: 100% ;" class="homepage-container row m-0 p-0">
+        <section class="d-flex flex-column justify-content-center text-center col-12 col-md-6 homepage_text">
+            <div><strong class="important-text display-5">!FST</strong> est un site web <strong style="color: var(--primary-btn);">non-officiel</strong> du <strong class="important-text display-5">Faculté de Science et Technologie</strong> de L'Université de Toamasina</div>
+			<div class="mt-5">
+				<p>Inscrivez-vous gratuitement pour pouvoir intéragir avec les autres utilisateurs</p>
+				<a style="background-color: var(--primary-btn) ; display: inline-block; width: 50%;color: var(--secondary-bg);" href="{% url 'register' %}" class="btn">S'inscrire Gratuitement &rarr;</a>
+			</div>
+		</section>
+        <section class="illustration d-none d-md-flex flex-column justify-content-center text-center col-md-6">
+            <?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 880 595.28" enable-background="new 0 0 880 595.28" xml:space="preserve">
+<pattern  width="12.45" height="17.65" patternUnits="userSpaceOnUse" id="Nouvelle_nuance_de_motif_1" viewBox="0 -17.65 12.45 17.65" overflow="visible">
+	<g>
+		<rect y="-17.65" fill="none" width="12.45" height="17.65"/>
+		<rect x="0.71" y="-17.15" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="11.03" height="16.65"/>
+		<line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="6.23" y1="-17.15" x2="6.23" y2="-0.5"/>
+		<polygon fill="none" stroke="#000000" stroke-miterlimit="10" points="0.71,-8.82 6.23,-14.34 11.74,-8.82 6.35,-3.43 		"/>
+	</g>
+</pattern>
+<pattern  width="282" height="220" patternUnits="userSpaceOnUse" id="Nouvelle_nuance_de_motif_3" viewBox="40.89 -240.24 282 220" overflow="visible">
+	<g>
+		<rect x="40.89" y="-240.24" fill="none" width="282" height="220"/>
+		<g>
+			<path fill="#F9F7F7" d="M148.31,0h18.11h69.69c0,0,14.85-0.78,7.97-14.73c-6.87-13.95-14.01-2.33-27.18-13.95
+				s-13.72-13.95-29.63-10.08S173-23.43,161.48-20.24c-11.52,3.19-21.95,5.52-20.3,12.49C142.82-0.78,148.31,0,148.31,0z"/>
+			<path fill="#F9F7F7" d="M123.45-26.26l41.08,0.86c0,0,4.11-1.73,0-3.24s-8.43-0.22-12.32-3.24s-15.35,2.38-20.97,3.24
+				c-5.62,0.86-18.37,1.02-11.24,1.95"/>
+		</g>
+		<g>
+			<path fill="#F9F7F7" d="M289.31-55h18.11h69.69c0,0,14.85-0.78,7.97-14.73c-6.87-13.95-14.01-2.33-27.18-13.95
+				c-13.17-11.63-13.72-13.95-29.63-10.08c-15.91,3.88-14.27,15.32-25.79,18.51c-11.52,3.19-21.95,5.52-20.3,12.49
+				S289.31-55,289.31-55z"/>
+			<path fill="#F9F7F7" d="M264.45-81.26l41.08,0.86c0,0,4.11-1.73,0-3.24c-4.11-1.51-8.43-0.22-12.32-3.24
+				c-3.89-3.03-15.35,2.38-20.97,3.24c-5.62,0.86-18.37,1.02-11.24,1.95"/>
+		</g>
+		<g>
+			<path fill="#F9F7F7" d="M7.31-55h18.11h69.69c0,0,14.85-0.78,7.97-14.73C96.2-83.68,89.07-72.05,75.9-83.68
+				S62.18-97.63,46.27-93.76C30.35-89.88,32-78.43,20.48-75.24s-21.95,5.52-20.3,12.49S7.31-55,7.31-55z"/>
+		</g>
+		<g>
+			<path fill="#F9F7F7" d="M148.31-110h18.11h69.69c0,0,14.85-0.78,7.97-14.73c-6.87-13.95-14.01-2.33-27.18-13.95
+				s-13.72-13.95-29.63-10.08c-15.91,3.88-14.27,15.32-25.79,18.51c-11.52,3.19-21.95,5.52-20.3,12.49
+				C142.82-110.78,148.31-110,148.31-110z"/>
+			<path fill="#F9F7F7" d="M123.45-136.26l41.08,0.86c0,0,4.11-1.73,0-3.24c-4.11-1.51-8.43-0.22-12.32-3.24
+				c-3.89-3.03-15.35,2.38-20.97,3.24c-5.62,0.86-18.37,1.02-11.24,1.95"/>
+		</g>
+		<g>
+			<path fill="#F9F7F7" d="M289.31-165h18.11h69.69c0,0,14.85-0.78,7.97-14.73c-6.87-13.95-14.01-2.33-27.18-13.95
+				c-13.17-11.63-13.72-13.95-29.63-10.08c-15.91,3.88-14.27,15.32-25.79,18.51c-11.52,3.19-21.95,5.52-20.3,12.49
+				C283.82-165.78,289.31-165,289.31-165z"/>
+			<path fill="#F9F7F7" d="M264.45-191.26l41.08,0.86c0,0,4.11-1.73,0-3.24c-4.11-1.51-8.43-0.22-12.32-3.24
+				c-3.89-3.03-15.35,2.38-20.97,3.24s-18.37,1.02-11.24,1.95"/>
+		</g>
+		<g>
+			<path fill="#F9F7F7" d="M7.31-165h18.11h69.69c0,0,14.85-0.78,7.97-14.73c-6.87-13.95-14.01-2.33-27.18-13.95
+				s-13.72-13.95-29.63-10.08c-15.91,3.88-14.27,15.32-25.79,18.51c-11.52,3.19-21.95,5.52-20.3,12.49
+				C1.82-165.78,7.31-165,7.31-165z"/>
+		</g>
+		<g>
+			<path fill="#F9F7F7" d="M148.31-220h18.11h69.69c0,0,14.85-0.78,7.97-14.73c-6.87-13.95-14.01-2.33-27.18-13.95
+				s-13.72-13.95-29.63-10.08s-14.27,15.32-25.79,18.51c-11.52,3.19-21.95,5.52-20.3,12.49C142.82-220.78,148.31-220,148.31-220z"/>
+		</g>
+	</g>
+</pattern>
+<pattern  id="SVGID_1_" xlink:href="#Nouvelle_nuance_de_motif_3" patternTransform="matrix(1 0 0 1 251.3784 6.7838)">
+</pattern>
+<rect x="209" y="31" fill="url(#SVGID_1_)" width="671" height="243.53"/>
+<g>
+	<g>
+		<path fill="none" stroke="#374E6A" stroke-width="100" stroke-miterlimit="10" d="M789.12,79.99"/>
+	</g>
+</g>
+<rect x="66.7" y="157.19" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="703.05" height="394.71"/>
+<rect x="66.7" y="496.52" fill="#112D4E" stroke="#000000" stroke-miterlimit="10" width="703.05" height="54.76"/>
+<rect x="102.71" y="284.85" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="85.78" height="10.57"/>
+<rect x="374.57" y="284.13" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="85.78" height="10.57"/>
+<rect x="102.71" y="477.79" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="85.78" height="10.57"/>
+<rect x="646.44" y="285.57" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="85.78" height="10.57"/>
+<rect x="646.44" y="477.79" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="85.78" height="10.57"/>
+<rect x="53.15" y="551.82" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="730.16" height="20.35"/>
+<text transform="matrix(1.0339 0 0 1 199.2427 353.5527)" font-family="'MyriadPro-Regular'" font-size="35.5443px"> </text>
+<rect x="23.5" y="116.02" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="789.46" height="41.91"/>
+<rect x="8.6" y="108.81" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="819.26" height="7.2"/>
+<rect x="331.73" y="451.77" fill="#F9F7F7" stroke="#000000" stroke-miterlimit="10" width="166.86" height="100.87"/>
+<text transform="matrix(1.0339 0 0 1 98.381 146.9767)" fill="#3F72AF" font-family="'Raleway'" font-size="30px" font-weight="bold">FACULTE DES SCIENCES ET TECHNOLOGIE</text>
+<rect x="107.32" y="213.34" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="76.56" height="72.05"/>
+<rect x="107.32" y="212.56" fill="#C69C6D" stroke="#000000" stroke-miterlimit="10" width="76.56" height="72.05"/>
+<rect x="96.5" y="201.04" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="98.2" height="11.53"/>
+<polygon fill="#C69C6D" stroke="#000000" stroke-miterlimit="10" points="183.88,477.79 145.6,477.79 107.32,477.79 107.32,405.74
+	183.88,405.74 "/>
+<rect x="96.5" y="392.77" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="98.2" height="11.53"/>
+<rect x="651.05" y="405.74" fill="#C69C6D" stroke="#000000" stroke-miterlimit="10" width="76.56" height="72.05"/>
+<rect x="640.23" y="394.21" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="98.2" height="11.53"/>
+<rect x="651.05" y="212.56" fill="#C69C6D" stroke="#000000" stroke-miterlimit="10" width="76.56" height="72.05"/>
+<rect x="640.23" y="201.04" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="98.2" height="11.53"/>
+<polygon fill="#C69C6D" stroke="#000000" stroke-miterlimit="10" points="456.51,284.61 417.46,284.61 379.95,284.61 379.95,212.56
+	456.51,212.56 "/>
+<rect x="368.36" y="201.04" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="98.2" height="11.53"/>
+<line fill="#754C24" stroke="#000000" stroke-miterlimit="10" x1="145.6" y1="284.61" x2="145.6" y2="212.56"/>
+<line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="418.23" y1="220.27" x2="418.23" y2="292.32"/>
+<line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="689.33" y1="284.61" x2="689.33" y2="212.56"/>
+<line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="145.6" y1="405.74" x2="145.6" y2="477.79"/>
+<line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="689.33" y1="477.79" x2="689.33" y2="405.74"/>
+<line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="107.32" y1="248.59" x2="183.88" y2="248.59"/>
+<line fill="#C69C6D" stroke="#000000" stroke-miterlimit="10" x1="651.05" y1="248.59" x2="727.61" y2="248.59"/>
+<line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="379.95" y1="248.59" x2="456.51" y2="248.59"/>
+<line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="107.32" y1="441.76" x2="183.88" y2="441.76"/>
+<line fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" x1="651.05" y1="441.76" x2="727.61" y2="441.76"/>
+<rect x="114.91" y="219.13" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="152.99" y="219.13" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="115.14" y="255.67" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="153.22" y="255.67" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="387.66" y="218.77" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="425.73" y="218.77" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="387.89" y="255.31" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="425.96" y="255.31" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="115.03" y="413.5" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="153.1" y="413.5" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="115.26" y="450.04" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="153.33" y="450.04" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="658.75" y="219.75" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="696.83" y="219.75" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="658.98" y="256.29" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="697.06" y="256.29" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="658.75" y="412.44" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="696.83" y="412.44" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="658.98" y="448.99" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<rect x="697.06" y="448.99" fill="#754C24" stroke="#000000" stroke-miterlimit="10" width="22.84" height="22.1"/>
+<pattern  id="SVGID_2_" xlink:href="#Nouvelle_nuance_de_motif_1" patternTransform="matrix(1 0 0 1 2.3959 15)">
+</pattern>
+<rect x="331.76" y="451.77" fill="url(#SVGID_2_)" stroke="#000000" stroke-miterlimit="10" width="85.7" height="100.87"/>
+<pattern  id="SVGID_3_" xlink:href="#Nouvelle_nuance_de_motif_1" patternTransform="matrix(1 0 0 1 2.3959 15)">
+</pattern>
+<rect x="412.91" y="451.77" fill="url(#SVGID_3_)" stroke="#000000" stroke-miterlimit="10" width="85.7" height="100.87"/>
+<text transform="matrix(1 0 0 1 197.9511 359.7354)" fill="#3F72AF" font-family="'Raleway'" font-size="36px" font-weight="bold">1000110    1010100     1010101</text>
+</svg>
+
+
+        </section>
+    </section>
+{% endblock %}

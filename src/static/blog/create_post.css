@@ -1,0 +1,113 @@
+.create-post {
+    position: relative ;
+    width: 100% ;
+    margin: auto ;
+    align-items: center ;
+}
+
+.create-post-container{
+    padding: 10px ;
+    background-color: var(--secondary-bg);
+    border-radius: 0.5rem ;
+    box-shadow: 0px 0px 4px var(--primary-btn);
+    width: 67ch ;
+}
+
+.create-post-container form input[type="submit"]{
+    display: block;
+    width: 100% ;
+    background-color: var(--primary-btn);
+    color: var(--secondary-bg);
+}
+
+.create-post-container form p label.id_title_label{
+    position: relative ;
+    color: grey ;
+    float: left ;
+    border: 0.3px solid var(--primary-btn) ;
+    border-top-left-radius: 0.3rem ;
+    border-bottom-left-radius: 0.3rem ;
+    height: 30px ;
+    width: 50px ;
+    background-color: var(--primary-btn) ;
+    color: var(--secondary-bg);
+    display: flex ;
+    flex-direction: column ;
+    justify-content: center ;
+    align-items: center ;
+}
+
+.create-post-container form #id_title{
+    display: block;
+    width: calc(100% - 50px) ;
+    border: 0.3px solid var(--primary-btn);
+    height: 30px ;
+    border-left: 0px ;
+    border-top-right-radius: 0.3rem ;
+    border-bottom-right-radius: 0.3rem ;
+    background-color: var(--primary-bg) ;
+    color: var(--secondary-btn) ;
+    padding-left: 10px ;
+    outline: none ;
+}
+
+.create-post-container form .id_content_label {
+    display: flex;
+    position: relative;
+    top: 100% ;
+}
+
+.create-post-container form #id_content {
+    width: 100% ;
+    border: 0.3px solid var(--primary-btn) ;
+    border-radius: 0.3rem;
+    outline: none;
+    background-color: var(--primary-bg) ;
+    color: var(--secondary-btn) ;
+    padding: 10px ;
+}
+
+.create-post-container form .cancel-btn {
+    border: 0.2px solid var(--secondary-btn) ;
+    color: 0.2px solid var(--secondary-btn) ;
+    padding: 0px ;
+    width: 100% ;
+}
+
+.create-post-container form .cancel-btn a {
+    position: relative;
+    display: inline-block;
+    color: var(--secondary-btn) ;
+    width: 100% ;
+    height: 100% ;
+    padding: 4px;
+}
+
+.emoji-left, .emoji-right {
+    background-color: var(--secondary-bg);
+    border-radius: 0.5rem ;
+    box-shadow: 0px 0px 4px var(--primary-btn);
+    padding: 2px ;
+    height: max-content;
+    width: 270px ;
+    max-width: 400px ;
+    overflow: auto ;
+}
+
+.emoji-left button, .emoji-right button {
+    background-color: var(--secondary-bg) ;
+    border: none ;
+    outline: none ;
+    width: 40px ;
+    font-size: 19px ;
+    height: 40px ;
+    transition: font-size 0.2s ;
+}
+
+.emoji-left button:hover, .emoji-right button:hover {
+    border: 0.3px solid var(--primary-btn) ;
+    padding: 2px ;
+    border-radius: 0.8rem ;
+    font-size: 25px ;
+    background-color: white ;
+}

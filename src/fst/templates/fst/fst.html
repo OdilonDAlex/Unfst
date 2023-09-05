@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Faculté de Science et Technologie {% endblock %}
+{% block styleSheet %}
+<link rel="stylesheet" href="{% static 'fst/style.css' %}"> {% endblock %}
+
+{% block breadcrumb %}
+<!--
+    <nav>
+        <ol class="breadcrumb small">
+            <li class="breadcrumb-item"><a class="text-decoration-none" href="{% url 'homepage' %}">Accueil</a></li>
+            <li class="breadcrumb-item active">FST</li>
+            <li class="breadcrumb-item"><a class="text-decoration-none" href="{% url 'blog_homepage' %}">Forum&Actualité</a></li>
+            <li class="breadcrumb-item"><a class="text-decoration-none" href="#">Contact</a></li>
+        </ol>
+    </nav>
+
+-->
+{% endblock %}
+
+{% block active_fst %} active active-link {% endblock %}
+
+{% block actionLink %}{% url 'create_cours' %}{% endblock %}
+{% block userAction %}Uploader un fichier{% endblock %}
+
+{% block content %}
+    <section class="row">
+        <aside id="navigation" class="d-none d-md-block col-md-3 border">
+        <h3 class="display-6">#Navigation</h3>
+            <ol class="navigation small text-primary">
+                <li><a href="#presentation" class="fs-5">Présentation</a>
+                    <ol>
+                        <li><a href="">FST c'est quoi ?</a></li>
+                        <li><a href="">Historique</a></li>
+                        <li><a href="">Les mentions dans FST</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#mentions" class="fs-5">Mentions</a>
+                    <ul>
+                        <li><a href="">MIA</a>
+                            <ul>
+                                <li style="color: rgb(129, 178, 154);">License
+                                <ol>
+                                    <li><a href="">1e annee de License</a></li>
+                                    <li><a href="">2e annee de License</a></li>
+                                    <li>
+                                    <a href="">3e annee de License</a>
+                                    <ul>
+                                        <li><a href="">Mathématique et Informatique</a></li>
+                                        <li><a href="">Académique Informatique</a></li>
+                                    </ul>
+                                    </li>
+                                </ol>
+                                </li>
+                                <li style="color: rgb(129, 178, 154);">Master
+                                    <ol>
+                                <li><a href="">Informatique</a>
+                                    <ul>
+                                        <li><a href="">Génie informatique</a>
+                                            <ul>
+                                                <li><a href="">1e annee de Master</a></li>
+                                                <li><a href="">2e annee de Master</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="">Image et Interaction</a>
+                                            <ul>
+                                                <li><a href="">1e annee de Master</a></li>
+                                                <li><a href="">2e annee de Master</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    </li>
+                                <li><a href="">Ingénierie Mathématique</a>
+                                    <ol>
+                                        <li><a href="">1e annee de Master</a></li>
+                                        <li><a href="">2e annee de Master</a></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">PC</a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#programmes-et-fichiers" class="fs-5">Programmes et fichiers</a>
+                    <ul>
+                        <li style="color: rgb(129, 178, 154);">
+                            MIA
+                        <ol>
+                            <li><a href="">License</a></li>
+                            <li><a href="">Master</a></li>
+                        </ol>
+                        </li>
+
+                    </ul>
+                    <ul>
+                        <li style="color: rgb(129, 178, 154);">
+                            PC
+                        <ol>
+                            <li><a href="">License</a></li>
+                            <li><a href="">Master</a></li>
+                        </ol>
+                        </li>
+
+                    </ul>
+                </li>
+            </ol>
+        </aside>
+    <section id="fst" class="col-12 col-md-9 border">
+        <h2 id="presentation" class="header-text display-4">#Presentation</h2>
+        <ol>
+            <li>
+                <h4 class="display-6">FST c'est quoi ?</h4>
+                <div class="d-flex justify-content-center">
+                <p class="fst-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate deserunt est harum iusto magni maiores nihil omnis perferendis praesentium provident quam quibusdam repudiandae similique sint ullam velit, veritatis voluptates voluptatum?
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam architecto assumenda distinctio dolore doloremque eligendi explicabo impedit magnam, minima nobis, non provident, quisquam sapiente similique voluptatum? Blanditiis omnis reiciendis ut!</p>
+                </div>
+            </li>
+            <li>
+                <h4 class="display-6">Historique</h4>
+                <div class="d-flex justify-content-center">
+                    <p class="fst-info">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, aut commodi doloremque eligendi eveniet expedita in iste minus molestias nam necessitatibus quia recusandae sit tempora, ut? Hic placeat rerum sit?
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aperiam blanditiis cupiditate eaque error id ipsum molestiae molestias natus nihil nostrum odio quo, rem repellendus sed temporibus tenetur veritatis voluptates!
+                    </p>
+                </div>
+            </li>
+            <li>
+                <h4 class="display-6">Les Mentions dans FST</h4>
+                <div class="cointainer-fluid">
+                    <div class="row d-flex justify-content-around gx-5">
+                        <div class="card m-0 p-0 col-12 col-md-5 cards">
+                            <img src="{% static 'fst/mia.jpg' %}" alt="Illustration MIA" class="card-img">
+                            <div class="card-body">
+                                <h4 class="card-title">Mathématique, Informatique et Application</h4>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae
+                                    delectus deleniti dolorum eius error nulla quasi quidem repellat rerum tenetur!
+                                    Aliquam architecto dolor doloremque eum explicabo iusto maiores mollitia ullam.</p>
+                            </div>
+                        </div>
+                        <div class="card m-0 p-0 col-12 col-md-5 cards">
+                            <img src="{% static 'fst/pc.jpg' %}" alt="Illustration PC" class="card-img">
+                            <div class="card-body">
+                                <h4 class="card-title">Physique Chimie</h4>
+                                <p class="card-text">Amet deleniti exercitationem impedit ipsa ipsam laudantium minima
+                                    possimus quas reiciendis velit? Ab aut eos, ex incidunt iusto laudantium nobis omnis
+                                    quaerat voluptates! Eos eum magni odio omnis qui repellat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <h2 id="mentions" class="header-text display-4">#Mentions</h2>
+        <ol>
+            <li>
+                <h4 class="display-6">MIA</h4>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <h2 style="text-indent: 50px;" class="w-100">Présentation</h2>
+                    <p class="fst-info">{% lorem%}</p>
+
+                    <h2 style="text-indent: 50px;" class="w-100">Condition d'éligibilié</h2>
+                    <p class="fst-info">{% lorem%}</p>
+                </div>
+            </li>
+            <li>
+                <h4 class="display-6">PC</h4>
+                <div class="d-flex flex-wrap justify-content-center">
+                    <h2 style="text-indent: 50px;" class="w-100">Présentation</h2>
+                    <p class="fst-info">{% lorem%}</p>
+
+                    <h2 style="text-indent: 50px;" class="w-100">Condition d'éligibilié</h2>
+                    <p class="fst-info">{% lorem%}</p>
+                </div>
+            </li>
+        </ol>
+
+        <h2 class="header-text display-4" id="programmes-et-fichiers">#Programmes et fichiers</h2>
+            <table class="table rounded table-bordered table-striped table-hover table-sm">
+                <thead>
+                    <td>Module</td>
+                    <td>Parcours</td>
+                    <td>Niveau</td>
+                    <td>Description</td>
+                    <td>Fichier</td>
+                </thead>
+                {% for cours in courss %}
+                    <tr>
+                        <td class="small">{{ cours.title }}</td>
+                        <td class="small">{{ cours.get_parcours }}</td>
+                        <td class="small">{{ cours.get_levels }}</td>
+                        <td class="small">{{ cours.description }}</td>
+                        {% if cours.is_file_exist %}
+                            <td class="text-center"><a style="width: 100%; color: var(--primary-bg); background-color: var(--primary-btn);" href="{{ cours.file.url }}" class="small btn btn-sm">Télécharger ({{ cours.get_file_size}}Mo)</a></td>
+                        {% else %}
+                            <td style="color: tomato;" class="text-center">Ouups!!, fichier introuvable</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </table>
+    </section>
+    </section>
+{% endblock %}
+
