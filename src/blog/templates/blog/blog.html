@@ -27,7 +27,7 @@
 {% block userAction %}Publier un article{% endblock %}
 
 {% block content %}
-    <section class="row gx-md-2 mt-1 w-100">
+    <section class="row gx-md-2 mt-1 w-100 mx-0 gx-0">
         <section  class="top-contributor-container m-0 p-0 d-none d-md-block col-md-3">
             <h3 style="border-bottom: 1px solid var(--primary-btn); font-size: 2em; background-color: var(--primary-btn); color: var(--secondary-bg);" class="header-text text-center display-5 mb-3">top contributeur(s)</h3>
             <ul class="top-contributor-list">
@@ -47,7 +47,7 @@
             </ul>
 
         </section>
-        <section class="user_post col-12 col-md-6">
+        <section class="user_post col-12 col-md-6 m-md-0">
         {% for post in posts %}
             <div style="border: 0.5px solid var(--primary-btn);" class="rounded post mb-2">
                 <div style="color: var(--secondary-btn); background-color: var(--secondary-bg);" class="rounded p-2">

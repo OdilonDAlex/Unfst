@@ -40,3 +40,21 @@
     color: var(--secondary-btn);
     padding:  0px 4px ;
 }
+
+@media only screen and (max-width: 768px){
+    .container-register {
+        border: 1px solid red;
+        padding: 0px!important ;
+        margin: 0px ;
+        width: 100%!important ;
+        height: 100%!important ;
+    }
+    .register {
+        position: relative;
+        height: 100% ;
+        width: 100% ;
+        border-radius: 0!important;
+        color: red ;
+        margin: 0px ;
+    }
+}

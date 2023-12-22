@@ -190,3 +190,10 @@ svg {
     color: var(--secondary-btn) ;
     box-shadow: 1px 1px 5px tomato ;
 }
+
+@media only screen and (max-width: 768px){
+    .user_post{
+        margin: auto ;
+        width: 100%;
+    }
+}

@@ -72,3 +72,19 @@
     color: var(--secondary-btn) ;
     border: 1px solid var(--secondary-btn) ;
 }
+
+@media only screen and (max-width: 768px){
+    .container-login {
+        padding: 0px!important ;
+        margin: 0px ;
+        width: 100%!important ;
+        height: 100%!important ;
+    }
+    .login {
+        position: relative;
+        height: 100% ;
+        width: 100% ;
+        border-radius: 0!important;
+        margin: 0px ;
+    }
+}

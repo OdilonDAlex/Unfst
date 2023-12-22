@@ -70,3 +70,21 @@ body {
 .footer-element a {
     color: var(--primary-bg);
 }
+
+@media only screen and (max-width: 768px) {
+    .illustration {
+        height: max-content ;
+    }
+
+    .homepage_text {
+        margin: 50px auto;
+    }
+
+    header#navbar {
+        height: max-content;
+    }
+
+    #collapse-data-container {
+        width:100% ;
+    }
+}

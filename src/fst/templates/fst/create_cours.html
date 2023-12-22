@@ -71,14 +71,26 @@
     height: 80px ;
 }
 
+@media only screen and (max-width: 768px) {
+    .create-cours-container {
+        padding: 0px;
+        margin:0px ;
+        width: 100% ;
+    }
+    .create-cours-container form {
+        width: 100% ;
+        border-radius: 0;
+    }
+}
+
 </style>
 {% endblock %}
 
 {% block content %}
-    <section style="height: 100vh; position: relative; width: 100%;" class="row create-cours-container">
+    <section style="height: content; position: relative; width: 100%;" class="row create-cours-container">
 
-        <div class="container d-flex flex-column justify-content-center">
-            <form style="width: max-content; height: max-content;" class="p-3" method="POST" enctype="multipart/form-data">
+        <div class="container w-100 p-0 m-0 d-flex flex-column justify-content-center">
+            <form style="width: content; height: max-content;" class="p-3" method="POST" enctype="multipart/form-data">
                 <h2 class="display-5 text-center header-text mb-4">#Uploader un fichier</h2>
                 {% csrf_token %}
                 <input type="hidden" name="author" value="{{ user }}">
