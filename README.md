@@ -1,7 +1,11 @@
 ﻿# UnOfficial FST WebSite
- # technologies:
-   - `Python 3.10.5`
+  Projet perso
+  
+## technologies:
+   - `Python 3.10`
    - `Django`
    - `JQuery`
    - `Bootstrap 5`
+   - `HTML`
+   - `CSS`
    
